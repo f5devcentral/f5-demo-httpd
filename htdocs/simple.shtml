@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><title>Demo App</title><link rel="stylesheet" href="/stylesheets/style.css"></head>
+<body><img src="images/f5-logo.png" align="left" height="75" width="75">
+<h1>Demo App</h1><p>Welcome to Demo App</p>
+<br><br><p><b>Server IP</b> = <!--#echo var="SERVER_ADDR"--></p>
+<p><b>Server Port</b> = <!--#echo var="SERVER_PORT"--></p>
+<br><p><b>Client IP</b> = <!--#echo var="REMOTE_ADDR"--></p>
+<p><b>Client Port</b> = <!--#echo var="REMOTE_PORT"--></p>
+<p><b>Client Protocol</b> = <!--#echo var="REQUEST_SCHEME"--></p>
+<br><p><b>Request Method</b> = <!--#echo var="REQUEST_METHOD"--></p>
+<p><b>Request URL</b> = <!--#echo var="SCRIPT_NAME"--></p>
+<p><b>Request Headers</b> =</p>
+<div class="indent"><p>host: <!--#echo var="HTTP_HOST"--></p>
+<!--#if expr='-n v("HTTP_USER_AGENT")' -->
+<p>user-agent: <!--#echo var="HTTP_USER_AGENT"--></p>
+<!--#endif-->
+<!--#if expr='-n v("HTTP_X_FORWARDED_FOR")' -->
+<p>x-forwarded-for: <!--#echo var="HTTP_X_FORWARDED_FOR"--></p>
+<!--#endif-->
+<pre>
+<!#--#printenv -->
+</pre>
+</body></html>

@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+# Apache gets grumpy about PID files pre-existing
+rm -f /usr/local/apache2/logs/httpd.pid
+NUMBER=$(( $RANDOM % 6 ))
+
+COLORS=(656263 ffd734 0194d2 a0bf37 ed7b0c 004892)
+RAND_COLOR=${COLORS[$NUMBER]}
+
+
+F5DEMO_NODENAME=${F5DEMO_NODENAME-"F5 Docker vLab"}
+F5DEMO_SHORT_NODENAME=${F5DEMO_SHORT_NODENAME-$HOSTNAME}
+F5DEMO_COLOR=${F5DEMO_COLOR-$RAND_COLOR}
+F5DEMO_BACKEND_URL=${F5DEMO_BACKEND_URL-http://127.0.0.1/backend.shtml}
+export F5DEMO_NODENAME
+export F5DEMO_SHORT_NODENAME
+export F5DEMO_COLOR
+export F5DEMO_BACKEND_URL
+exec httpd -DFOREGROUND

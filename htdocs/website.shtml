@@ -1,0 +1,60 @@
+<!--#include virtual = "header.shtml"-->
+<div class="container marketing">
+  <!-- Main component for a primary marketing message or call to action -->
+	<div class="jumbotron f5main" style="background-image: url('/img/mono-datastream.svg');background-repeat: repeat-x;background-position:bottom;background-size: 600px 60px">
+	    <h1><!--#echo var="F5DEMO_NODENAME"--> <small>F5 vLab</small></h1>
+	    <p>Deliver the most secure, fast, and reliable applications to
+		    anyone, anywhere at any time.</p>
+
+	     
+    <p class="pull-right"><span style="font-size: 50%"></span></p>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-4">
+      <img src="/globe.ssvg" width="135" height="145" alt="Available">	      
+      <h3>Available</h3>
+       <p>One of BIG-IP core functions is load balancing, which entails managing network traffic such that no one server becomes overwhelmed while others idle. This improves application performance and availability.</p>
+      </div>
+ 
+       <div class="col-lg-4">      
+	<img src="/mobile.ssvg" width="135" height="145" alt="Fast">
+	<h3>Fast</h3>       
+       <p>BIG IP is able to shift key tasks away from the server to its own processor in order to improve performance. This can reduce the number of servers in a typical datacenter by as much as 60% and speed up the performance of the remaining servers.</p>
+       </div>       
+
+       <div class="col-lg-4">
+       <img src="/lock.ssvg" width="135" height="145" alt="Secure">
+       	    <h3>Secure</h3>
+       <p>BIG-IP identifies and stops most DDoS attacks before they reach the datacenter. With hardware-based DoS protections, BIG-IP detects DDoS attacks and routes the connections away from critical servers, or rejects them outright.</p>
+       </div>
+
+  </div> <!-- end row -->
+
+</div> <!-- end container -->
+    <div class="container">
+
+      <div class="row">
+
+    <div class="page-header">
+
+      </div>
+       <div class="col-lg-4">
+	       <img src="/virtualedition.ssvg" alt="Virtual Edition">	
+	       <h3>Virtual Edition</h3>
+	       <p>BIG-IP Virtual Editions offer all the functionality of our hardware based solutions. They can run continuously or be spun up and down as needed to handle spikes in demand. With the most flexible deployment options in the industry, Virtual Editions provide an agile and efficient way to deploy F5’s Software-Defined Application Services fabric in hybrid, virtual, and cloud environments.</p>
+       </div>
+       <div class="col-lg-4">
+	       <img src="/appliance.ssvg" alt="Appliance">
+	    <h3>Appliance</h3>
+	    <p>Consolidate, distribute, and scale application delivery services up, in, and out of the data center with the BIG-IP line of hardware devices. You'll find entry-level, midrange, and high-performance options built to suit a wide range of business requirements.</p>
+       </div>
+       <div class="col-lg-4">
+	       <img src="/viprion.ssvg" alt="VIPRION">	
+	       <h3>VIPRION</h3>
+	       <p> VIPRION chassis features ultra high-performance blades, so you can truly scale and adapt on-demand. Only F5 enables you to add or remove blades without disrupting your apps or users. VIPRION lets you add power without adding devices. You'll find different chassis options to meet both enterprise and service provider requirements.</p>
+       </div>
+      </div> <!-- end row -->
+    </div> <!-- end container -->
+
+<!--#include virtual = "footer.shtml"-->

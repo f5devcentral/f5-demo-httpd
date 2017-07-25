@@ -1,0 +1,12 @@
+.navbar-default {
+  background-color: #fff;
+  border-color: #<!--#echo var="F5DEMO_COLOR"-->;
+  border-width: 4px;
+/*  background-repeat: no-repeat;  		
+  background-image: url("/img/logo.svg");
+  background-size: 45px 45px;
+  background-position: center center; */
+}
+.f5menu span::after {
+    content: "<!--#echo var="F5DEMO_SHORT_NODENAME"-->";
+}

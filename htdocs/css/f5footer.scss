@@ -1,0 +1,11 @@
+.f5footer {
+    border-style: solid;
+    border-color: #<!--#echo var="F5DEMO_COLOR"-->;
+    border-width: 5px;
+   }
+
+.f5footer span::after {
+    content: "<!--#echo var="F5DEMO_SHORT_NODENAME"-->";
+}
+
+    

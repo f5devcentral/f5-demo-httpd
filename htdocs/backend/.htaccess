@@ -1,0 +1,5 @@
+RequestHeader set User-Agent "Frontend App/1.0"
+RewriteEngine on
+RewriteBase "/backend/"
+RewriteRule .* "%{ENV:F5DEMO_BACKEND_URL}" [P]
+

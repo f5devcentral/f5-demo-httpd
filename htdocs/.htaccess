@@ -1,0 +1,29 @@
+header add X-COLOR %{F5DEMO_COLOR}e
+Options -MultiViews +FollowSymLinks
+RewriteEngine On
+
+# for fastcgi
+RewriteCond %{HTTP:Authorization} ^(.+)
+RewriteRule ^(.*)$ index.php [E=HTTP_AUTHORIZATION:%1,PT]
+# for silex
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^ index.php [QSA,L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{ENV:F5DEMO_APP}  "website"
+RewriteRule ^index.shtml website.shtml
+RewriteCond %{ENV:F5DEMO_APP}  "frontend"
+RewriteRule ^index.shtml frontend.shtml
+RewriteCond %{ENV:F5DEMO_APP}  "backend"
+RewriteRule ^index.shtml backend.shtml
+
+#RequestHeader set User-Agent "Frontend App/1.0"
+
+#RewriteRule ^backend/.* "%{ENV:F5DEMO_BACKEND_URL}" [P]
+#RewriteRule ^back-end/.* "%{ENV:F5DEMO_BACKEND_URL}" [P,E=HTTP_USER_AGENT:FOOBAR]
+
+PassEnv F5DEMO_NODENAME
+PassEnv F5DEMO_COLOR
+PassEnv HOSTNAME
+PassEnv F5DEMO_SHORT_NODENAME
+PassEnv F5DEMO_BACKEND_URL
