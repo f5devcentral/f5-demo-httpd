@@ -1,0 +1,62 @@
+<!--#include virtual = "/header.shtml"-->
+<div class="container marketing">
+  <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron f5main">
+	    <h1>Headers <small><!--#echo var="F5DEMO_SHORT_NODENAME"--></small></h1>
+    </div>
+    <div class="row">
+		    <h3>View Request and Response Headers</h3>
+		    Virtual server address: <!--#echo var="HTTP_HOST"--><br/>
+Pool member address/port: <!--#echo var="SERVER_ADDR"-->:<!--#echo var="SERVER_PORT"--><br/>
+		    Client IP address/port: <!--#if expr='-n v("HTTP_X_FORWARDED_FOR")' -->
+		    <!--#echo var="HTTP_X_FORWARDED_FOR"--><!--#else--><!--#echo var="REMOTE_ADDR"-->
+		    <!--#endif-->
+		    <br/>
+
+	    </div>
+	    <div class="row">	    
+	    <div class="col-md-6">
+	    <h3>Client Headers</h3>
+	    <p>Request Headers Received at the Server</p>
+	    <pre><!--#printenv --></pre>
+	    </div>
+	    <div class="col-md-6">
+	    	 <h3>Server Headers</h3>
+		    <p>Response Headers delivered to the Client</p>
+		    <span id='responseheaders'></span>
+			    <script>
+   function loadInfo() {
+			    var http;
+			    if(window.ActiveXObject){
+				    http = new ActiveXObject("Microsoft.XMLHTTP");
+			    }else if(window.XMLHttpRequest){
+				    http = new XMLHttpRequest();
+			    }
+			    // display headers of current document:
+				    http.open('HEAD', location.href, false);
+			    http.send();
+			    
+			    var hstring = '<table class="table">';
+			    var headerarray = http.getAllResponseHeaders().split("\n");
+			    for(i = 0; i < headerarray.length; i++){
+			    	  var parts = headerarray[i].split(":");
+				  var val = parts[1];
+				    if(parts.length > 2) {
+				      	    for(j=2;j<parts.length;j++) {
+						    val = val + ':' +  parts[j];
+					    }
+				    }
+				    hstring = hstring+'<tr><td><b>' + parts[0] + '</b></td><td>'+val+'</td></tr>';
+			    }
+			    hstring = hstring+'</table>';
+			    var rhdiv = document.getElementById('responseheaders');
+			    rhdiv.innerHTML = hstring;
+			    }
+			    loadInfo();
+			    </script>
+		    </div>
+	    </div>
+    </div>
+</div>
+<!--#include virtual = "/footer.shtml"-->
+
