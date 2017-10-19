@@ -7,6 +7,8 @@ Simple Docker Apache HTTPD container.
 
 This is [F5 Contributed Software](https://support.f5.com/csp/article/K80012344)
 
+[Docker Hub](https://hub.docker.com/r/f5devcentral/f5-demo-httpd/)
+
 ### Requirements
    Docker 
 
@@ -16,11 +18,11 @@ This is [F5 Contributed Software](https://support.f5.com/csp/article/K80012344)
 # simple page
 docker run -p 8080:80
 # simple website
-docker run --rm -e F5DEMO_APP=website
+docker run --rm -e F5DEMO_APP=website f5devcentral/f5-demo-httpd
 # simple frontend
-docker run --rm -e F5DEMO_APP=frontend -e F5DEMO_BACKEND_URL=http://10.1.20.10/backend.shtml
+docker run --rm -e F5DEMO_APP=frontend -e F5DEMO_BACKEND_URL=http://10.1.20.10/backend.shtml f5devcentral/f5-demo-httpd
 # simple backend
-docker run --rm -e F5DEMO_APP=backend
+docker run --rm -e F5DEMO_APP=backend f5devcentral/f5-demo-httpd
 ```
 
 Other variables for "website"
