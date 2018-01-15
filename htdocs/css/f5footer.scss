@@ -1,6 +1,6 @@
 .f5footer {
     border-style: solid;
-    border-color: #<!--#echo var="F5DEMO_COLOR"-->;
+    border-color: #<!--#if expr='v("HTTPS") = "on"' --><!--#echo var="F5DEMO_COLOR_SSL"--><!--#else --><!--#echo var="F5DEMO_COLOR"--><!--#endif-->;
     border-width: 5px;
    }
 

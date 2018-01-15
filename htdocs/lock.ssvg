@@ -63,7 +63,7 @@
        transform="matrix(1.25,0,0,-1.25,-2553.75,-330.49494)">
       <path
          d="M 0,0 C 0,14.912 12.088,27 27,27 41.913,27 54,14.912 54,0 54,-14.912 41.913,-27 27,-27 12.088,-27 0,-14.912 0,0"
-         style="fill:#<!--#echo var="F5DEMO_COLOR"-->;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="fill:#<!--#if expr='v("HTTPS") = "on"' --><!--#echo var="F5DEMO_COLOR_SSL"--><!--#else --><!--#echo var="F5DEMO_COLOR"--><!--#endif-->;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3832"
          inkscape:connector-curvature="0" />
     </g>
@@ -81,7 +81,7 @@
        transform="matrix(1.25,0,0,-1.25,1127.9254,195.75285)">
       <path
          d="M 0,0 C 0,14.912 12.088,27 27,27 41.913,27 54,14.912 54,0 54,-14.912 41.913,-27 27,-27 12.088,-27 0,-14.912 0,0"
-         style="fill:#<!--#echo var="F5DEMO_COLOR"-->;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="fill:#<!--#if expr='v("HTTPS") = "on"' --><!--#echo var="F5DEMO_COLOR_SSL"--><!--#else --><!--#echo var="F5DEMO_COLOR"--><!--#endif-->;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3832-3"
          inkscape:connector-curvature="0" />
     </g>
@@ -99,7 +99,7 @@
        transform="matrix(1.25,0,0,-1.25,1167.7545,192.7721)">
       <path
          d="m 0,0 -9.444,0 0,3.105 c 0,2.394 1.948,4.341 4.341,4.341 l 0.761,0 C -1.947,7.446 0,5.499 0,3.105 L 0,0"
-         style="fill:#<!--#echo var="F5DEMO_COLOR"-->;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="fill:#<!--#if expr='v("HTTPS") = "on"' --><!--#echo var="F5DEMO_COLOR_SSL"--><!--#else --><!--#echo var="F5DEMO_COLOR"--><!--#endif-->;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="path3840"
          inkscape:connector-curvature="0" />
     </g>

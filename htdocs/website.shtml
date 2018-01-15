@@ -2,7 +2,7 @@
 <div class="container marketing">
   <!-- Main component for a primary marketing message or call to action -->
 	<div class="jumbotron f5main" style="background-image: url('/img/mono-datastream.svg');background-repeat: repeat-x;background-position:bottom;background-size: 600px 60px">
-	    <h1><!--#echo var="F5DEMO_NODENAME"--> <small>F5 vLab</small></h1>
+	    <h1><!--#if expr='v("HTTPS") = "on"' --><!--#echo var="F5DEMO_NODENAME_SSL"--><!--#else --><!--#echo var="F5DEMO_NODENAME"--><!--#endif--> <small>F5 vLab</small></h1>
 	    <p>Deliver the most secure, fast, and reliable applications to
 		    anyone, anywhere at any time.</p>
 

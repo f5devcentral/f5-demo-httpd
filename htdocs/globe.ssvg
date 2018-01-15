@@ -69,7 +69,7 @@
         <path
            inkscape:connector-curvature="0"
            id="path3816"
-           style="fill:#<!--#echo var="F5DEMO_COLOR"-->;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           style="fill:#<!--#if expr='v("HTTPS") = "on"' --><!--#echo var="F5DEMO_COLOR_SSL"--><!--#else --><!--#echo var="F5DEMO_COLOR"--><!--#endif-->;fill-opacity:1;fill-rule:nonzero;stroke:none"
            d="M 0,0 C 0,14.912 12.088,27 27,27 41.913,27 54,14.912 54,0 54,-14.912 41.913,-27 27,-27 12.088,-27 0,-14.912 0,0" />
       </g>
       <g

@@ -18,7 +18,11 @@
       }
       .f5main {
       border-style:solid;
+      <!--#if expr='v("HTTPS") = "on"' -->
+      border-color:#<!--#echo var="F5DEMO_COLOR_SSL"-->;
+      <!--#else -->
       border-color:#<!--#echo var="F5DEMO_COLOR"-->;
+      <!--#endif-->
       background-color:#fff;
       border-width:10px;
       }

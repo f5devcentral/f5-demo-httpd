@@ -1,0 +1,26 @@
+================================================
+ ___ ___   ___                    _
+| __| __| |   \ ___ _ __  ___    /_\  _ __ _ __
+| _||__ \ | |) / -_) '  \/ _ \  / _ \| '_ \ '_ \
+|_| |___/ |___/\___|_|_|_\___/ /_/ \_\ .__/ .__/
+                                     |_|  |_|
+================================================
+
+      Node Name: <!--#if expr='v("HTTPS") = "on"' --><!--#echo var="F5DEMO_NODENAME_SSL"--><!--#else --><!--#echo var="F5DEMO_NODENAME"--><!--#endif-->
+     Short Name: <!--#echo var="F5DEMO_SHORT_NODENAME"-->
+
+      Server IP: <!--#echo var="SERVER_ADDR"-->
+    Server Port: <!--#echo var="SERVER_PORT"-->
+
+      Client IP: <!--#echo var="REMOTE_ADDR"-->
+    Client Port: <!--#echo var="REMOTE_PORT"-->
+
+Client Protocol: <!--#if expr='v("HTTPS") = "on"' -->HTTPS<!--#else -->HTTP<!--#endif-->
+ Request Method: <!--#echo var="REQUEST_METHOD"-->
+    Request URI: <!--#echo var="REQUEST_URI"-->
+
+    host_header: <!--#echo var="HTTP_HOST"-->
+<!--#if expr='-n v("HTTP_USER_AGENT")' -->     user-agent: <!--#echo var="HTTP_USER_AGENT"--><!--#endif-->
+<!--#if expr='-n v("HTTP_X_FORWARDED_FOR")' -->x-forwarded-for: <!--#echo var="HTTP_X_FORWARDED_FOR"--><!--#endif-->
+
+<!--#if expr='v("QUERY_STRING") = "printenv"' --><!--#printenv--><!--#endif-->
