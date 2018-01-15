@@ -17,7 +17,7 @@ RewriteRule ^index.shtml frontend.shtml
 RewriteCond %{ENV:F5DEMO_APP}  "backend"
 RewriteRule ^index.shtml backend.shtml
 
-RewriteRule ^txt text.shtml
+RewriteRule ^txt text.stxt
 
 #RequestHeader set User-Agent "Frontend App/1.0"
 
