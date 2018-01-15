@@ -23,6 +23,17 @@ docker run --rm -e F5DEMO_APP=website f5devcentral/f5-demo-httpd
 docker run --rm -e F5DEMO_APP=frontend -e F5DEMO_BACKEND_URL=http://10.1.20.10/backend.shtml f5devcentral/f5-demo-httpd
 # simple backend
 docker run --rm -e F5DEMO_APP=backend f5devcentral/f5-demo-httpd
+# different name/color for non-ssl/ssl
+docker run --rm -p 8080:80 -p 8443:443 \
+                -e F5DEMO_APP=website \
+                -e F5DEMO_NODENAME='No SSL' \
+                -e F5DEMO_COLOR=ffd734 \
+                -e F5DEMO_NODENAME_SSL='SSL Site' \
+                -e F5DEMO_COLOR_SSL=a0bf37 \
+                f5devcentral/f5-demo-httpd
+
+# compatible with openshift (does not run as root)
+docker run --rm -p 8080:8080 -p 8443:8443 -e F5DEMO_APP=website f5devcentral/f5-demo-httpd:openshift
 ```
 
 Other variables for "website"
@@ -31,11 +42,18 @@ Other variables for "website"
 # change the title
 -e F5DEMO_NODENAME='Your Website'
 # change the color
+
+# dark gray
 -e F5DEMO_COLOR=656263
+# yellow
 -e F5DEMO_COLOR=ffd734
+# blue
 -e F5DEMO_COLOR=0194d2
+# green
 -e F5DEMO_COLOR=a0bf37
+# orange
 -e F5DEMO_COLOR=ed7b0c
+# dark blue
 -e F5DEMO_COLOR=004892
 ```
 
