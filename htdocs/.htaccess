@@ -2,9 +2,9 @@ header add X-COLOR %{F5DEMO_COLOR}e
 Options -MultiViews +FollowSymLinks
 RewriteEngine On
 
-# for fastcgi
-RewriteCond %{HTTP:Authorization} ^(.+)
-RewriteRule ^(.*)$ index.php [E=HTTP_AUTHORIZATION:%1,PT]
+# for basic auth / bearer tokens
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 # for silex
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule ^ index.php [QSA,L]
