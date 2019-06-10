@@ -63,14 +63,43 @@ Other variables for "website"
 
 ### URIs
 
+```
 /index.shtml: simple site
 /frontend.shtml: simple frontend (for reverse-proxy demo)
 /backend.shtml: simple backend
-/txt: NJS output of NGINX variables
 /website.shtml: Simple website
 /headers/: Output of Client/Server HTTP headers
 /headers.json: Output of client headers in JSON
+/txt: NJS output of NGINX variables
+
+================================================
+ ___ ___   ___                    _
+| __| __| |   \ ___ _ __  ___    /_\  _ __ _ __
+| _||__ \ | |) / -_) '  \/ _ \  / _ \| '_ \ '_ \
+|_| |___/ |___/\___|_|_|_\___/ /_/ \_\ .__/ .__/
+                                      |_|  |_|
+================================================
+
+      Node Name: F5 Docker vLab
+     Short Name: 41fd19e86e9a
+
+      Server IP: 172.17.0.2
+    Server Port: 80
+
+      Client IP: 172.17.0.1
+    Client Port: 45664
+
+Client Protocol: HTTP
+ Request Method: GET
+    Request URI: /txt
+
+    host_header: localhost
+     user-agent: curl/7.29.0
+x-forwarded-for: 192.168.1.187
+
+
+```
 
 ### Authored By
 
-[Eric Chen](https://devcentral.f5.com/users/123940) | [@chen23](https://github.com/chen23)
+[Eric Chen](https://devcentral.f5.com/s/profile/0051T000008tz2AQAQ) | [@chen23](https://github.com/chen23)
