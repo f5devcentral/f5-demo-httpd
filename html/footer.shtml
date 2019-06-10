@@ -1,0 +1,19 @@
+      <div class="container">
+        <!-- FOOTER -->
+      <footer class="f5footer">
+
+        <h3>&nbsp;F5 vLab</h3>
+&nbsp;  <small><em>Release: 2019-06-10</em></small>
+              <p class="pull-right">
+                      <small><span></span></small>&nbsp;<br/>
+              <p>&nbsp;&copy; 2019 F5 Networks, Inc.</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

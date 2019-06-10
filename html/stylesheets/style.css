@@ -1,0 +1,13 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f2f3f3;
+}
+
+a {
+  color: #00B7FF;
+}
+
+div.indent{
+  padding-left: 50px;
+}

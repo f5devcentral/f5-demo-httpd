@@ -1,0 +1,25 @@
+<!--#include virtual = "/header.shtml"-->
+<div class="container marketing">
+  <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron f5main">
+      <h1>F5 Networks<small>Welcome!</small></h1>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      
+	<h2>About</h2>
+	<p>As the global leader in Application Delivery Networking, F5 makes the connected world run better. In fact, you've probably relied on F5 products dozens of times today and didn't even know it. F5 helps organizations meet the demands that come with the relentless growth of voice, data, and video traffic, mobile workers, and applications' in the data center and the cloud</p>
+	<p>	  Pool member address/port: <!--#echo var="SERVER_ADDR"-->:<b>server_port</b>
+	    <br>
+	Requested URI: request_uri</p>
+
+	</div>
+	<div class="col-md-6">
+	<img src="/img/F5_building.jpg" alt="F5 Corporate Office" width="360" height="257"><br><br>
+	</div>
+      </div>
+    </div>
+</div>
+<!--#include virtual = "/footer.shtml"-->
+

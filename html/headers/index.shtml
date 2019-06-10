@@ -1,0 +1,93 @@
+<!--#include virtual = "/header.shtml"-->
+<div class="container marketing">
+  <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron f5main">
+	    <h1>Headers <small>server_hostname</small></h1>
+    </div>
+    <div class="row">
+		    <h3>View Request and Response Headers</h3>
+		    Virtual server address: <!--#echo var="HTTP_HOST"--><br/>
+Pool member address/port: <!--#echo var="SERVER_ADDR"-->:server_port<br/>
+		    Client IP address/port: remote_addr<br/>
+                    Protocol: proto_scheme
+		    <br/>
+
+	    </div>
+	    <div class="row">	    
+	    <div class="col-md-6">
+	    <h3>Client Headers</h3>
+	    <p>Request Headers Received at the Server</p>
+		    <span id='requestheaders'></span>
+			    <script>
+   function loadHeaders() {
+			    var http;
+			    if(window.ActiveXObject){
+				    http = new ActiveXObject("Microsoft.XMLHTTP");
+			    }else if(window.XMLHttpRequest){
+				    http = new XMLHttpRequest();
+			    }
+			    // display headers of current document:
+				    http.open('GET', location.origin + '/headers.json');
+			    http.send();
+			    http.onreadystatechange = function() {
+                            if(this.readyState == 4 && this.status == 200) {
+			    var hstring = '<table class="table">';
+			    var headerarray = JSON.parse(http.responseText);
+			    for(mykey in headerarray) {
+				    hstring = hstring+'<tr><td><b>' + mykey  + '</b></td><td>'+headerarray[mykey]+'</td></tr>';
+			    }
+			    hstring = hstring+'</table>';
+			    var rhdiv = document.getElementById('requestheaders');
+			    rhdiv.innerHTML = hstring;
+                            }
+                            }
+			    }
+
+			    loadHeaders();
+			    </script>
+
+	    </div>
+	    <div class="col-md-6">
+	    	 <h3>Server Headers</h3>
+		    <p>Response Headers delivered to the Client</p>
+		    <span id='responseheaders'></span>
+			    <script>
+   function loadInfo() {
+			    var http;
+			    if(window.ActiveXObject){
+				    http = new ActiveXObject("Microsoft.XMLHTTP");
+			    }else if(window.XMLHttpRequest){
+				    http = new XMLHttpRequest();
+			    }
+			    // display headers of current document:
+				    http.open('HEAD', location.href);
+			    http.send();
+			    http.onreadystatechange = function() {
+                            if(this.readyState == 4 && this.status == 200) {			    
+			    var hstring = '<table class="table">';
+			    var headerarray = http.getAllResponseHeaders().split("\n");
+			    for(i = 0; i < headerarray.length; i++){
+			    	  var parts = headerarray[i].split(":");
+				  var val = parts[1];
+				    if(parts.length > 2) {
+				      	    for(j=2;j<parts.length;j++) {
+						    val = val + ':' +  parts[j];
+					    }
+				    }
+				    hstring = hstring+'<tr><td><b>' + parts[0] + '</b></td><td>'+val+'</td></tr>';
+			    }
+			    hstring = hstring+'</table>';
+			    var rhdiv = document.getElementById('responseheaders');
+			    rhdiv.innerHTML = hstring;
+               
+			    }                              
+			    }
+			    }
+			    loadInfo();
+			    </script>
+		    </div>
+	    </div>
+    </div>
+</div>
+<!--#include virtual = "/footer.shtml"-->
+

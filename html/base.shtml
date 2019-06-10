@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>F5 vLab {{title|default('')}}</title>
+
+    <!-- Bootstrap -->
+    <link href="/css/f5demo.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/dyncss/f5header.css" rel="stylesheet">
+    <link href="/dyncss/f5footer.css" rel="stylesheet">
+    <style>
+      svg, g, path {
+      fill: #000;
+      }
+      .f5main {
+      border-style:solid;
+      border-color:#<!--#if expr='v("HTTPS") = "on"' --><!--#echo var="F5DEMO_COLOR_SSL"--><!--#else --><!--#echo var="F5DEMO_COLOR"--><!--#endif-->;
+      background-color:#fff;
+      border-width:10px;
+      }
+      .f5table .table td {
+      text-align: right;
+      background-color: #000;
+      }
+      {% block style %}{% endblock %}
+    </style>
+    <script src="/js/f5demo.js"></script>
+  </head>
+  <body>
+
+
+    <div class="container"> 
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+	<div class="container-fluid">
+	  <div class="navbar-header">
+	    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	      <span class="sr-only">Toggle navigation</span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </button>
+	    <a class="navbar-brand" href="/">F5 vLab</a>
+	  </div>
+	  <div id="navbar" class="navbar-collapse collapse">
+	    <ul class="nav navbar-nav">
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demos <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="/welcome/">Welcome</a></li>
+		  <li><a href="/headers/">Request and Response Headers</a></li>
+		  <li><a href="#" onclick="alert('Cookie = ' + document.cookie); return false;">Display Cookie</a></li>
+		   <li><a href='/lorax/'>Stream Profile Example</a></li>
+		   <li><a href='/badlinks/'>Multiple Stream Example</a></li>
+		   <li><a href='/privatedata/'>Mask Sensitive Content Example</a></li>
+		   <li><a href='/httprequest/'>Simple HTTP Request</a></li>
+		  <li><a href='/basic/'>Basic Authentication</a></li>
+		  <li><a href='/form/'>Form Authentication</a></li>		  
+		</ul>
+	      </li>
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Original<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href=/index.php>index.php</a></li>
+		  <li><a href="/welcome.php">Welcome</a></li>
+		  <li><a href="/headers.php">Request and Response Headers</a></li>
+		  <li><a href="#" onclick="alert('Cookie = ' + document.cookie); return false;">Display Cookie</a></li>
+		   <li><a href="/bigtext.html">HTTP Compress Example</a></li>
+		   <li><a href='/exercise_guide.txt'>Plaintext Compress Example</a></li>
+		   <li><a href='/lorax.php'>Stream Profile Example</a></li>
+		   <li><a href='/badlinks.html'>Multiple Stream Example</a></li>
+		   <li><a href='/privatedata.html'>Mask Sensitive Content Example</a></li>
+		   <li><a href='/httprequest.php'>Simple HTTP Request</a></li>
+		   <li><a href='/sessioncookiecontrol.php'>Web Session Example</a></li>
+		   <li><a href='/basic/index.php'>Basic Authentication</a></li>
+		   <li><a href='/ldapauth.php'>LDAP bind authentication</a></li>
+		   <li><a href='/acceleration/acceleration.html'>Application Acceleration Examples</a></li>
+		</ul>
+	      </li>
+</ul>
+	    <p class="pull-right f5menu"><small><span id="css_node"></span></small></p>
+	  </div><!--/.nav-collapse -->
+	</div><!--/.container-fluid -->
+      </nav>
+    </div> <!-- /container -->
+    
+      {% block main %}
+      {% endblock %}
+
+      <div class="container">
+	<!-- FOOTER -->
+      <footer class="f5footer">
+	
+	<h3>&nbsp;F5 vLab</h3>
+&nbsp;	<small><em>Release: 2015-10-04</em></small>
+	      <p class="pull-right">
+		      <small><span></span></small>&nbsp;<br/>
+	      <p>&nbsp;&copy; 2015 F5 Networks, Inc.</p>
+      </footer>
+
+    </div><!-- /.container -->
+      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html
+>

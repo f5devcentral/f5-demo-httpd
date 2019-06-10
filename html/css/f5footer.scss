@@ -1,0 +1,11 @@
+.f5footer {
+    border-style: solid;
+    border-color: #f5demo_color;
+    border-width: 5px;
+   }
+
+.f5footer span::after {
+    content: "server_hostname";
+}
+
+    

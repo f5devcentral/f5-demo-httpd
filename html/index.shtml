@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><title>Demo App</title><link rel="stylesheet" href="/stylesheets/style.css"></head>
+<body><img src="images/f5-logo.png" align="left" height="75" width="75">
+<h1>Demo App</h1><p>Welcome to Demo App</p>
+<br><br><p><b>Server IP</b> = <!--#echo var="SERVER_ADDR"--></p>
+<p><b>Server Port</b> = server_port</p>
+<p><b>Client IP</b> = remote_addr</p>
+
+<p><b>Request Headers</b> =</p>
+<div class="indent"><p>host: <!--#echo var="HTTP_HOST"--></p>
+<p>client_browser</p>
+<p>proxied_for_ip</p>
+<pre>
+<!#--#printenv -->
+</pre>
+</body></html>
