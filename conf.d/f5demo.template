@@ -41,7 +41,7 @@ server {
 
     index index.shtml;
 
-    expires -1;
+    #expires -1;
 
     sub_filter_once on;
     sub_filter_types text/plain image/svg+xml text/css;    
