@@ -44,7 +44,7 @@ function f5demo_txt(r) {
     }
     output += `
 
-      Node Name: F5 Docker vLab
+      Node Name: ${r.variables.f5demo_nodename}
      Short Name: ${r.variables.hostname}
 
       Server IP: ${r.variables.server_addr}
