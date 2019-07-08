@@ -24,15 +24,18 @@ server {
     listen 443 ssl http2;
     ssl_certificate server.crt;
     ssl_certificate_key server.key;
+    ssl_trusted_certificate chain.crt;
+
+    ssl_dhparam dhparam.pem;
 
     include conf.d/mime.types;
 
 	location /headers.json {
 	    js_content headers_json;
-	}	
+	}
 	location /txt {
 	    js_content f5demo_txt;
-	}	
+	}
 
 
     ssi on;
@@ -44,7 +47,7 @@ server {
     #expires -1;
 
     sub_filter_once on;
-    sub_filter_types text/plain image/svg+xml text/css;    
+    sub_filter_types text/plain image/svg+xml text/css;
     sub_filter 'nodename' '$f5demo_nodename';
     sub_filter 'server_hostname' '$hostname';
     sub_filter 'server_address' '$server_addr';
