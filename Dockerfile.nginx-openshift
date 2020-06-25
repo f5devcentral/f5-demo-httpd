@@ -1,0 +1,29 @@
+FROM nginx:alpine
+
+ENV F5DEMO_COLOR __RANDOMIZE
+ENV F5DEMO_COLOR_SSL __RANDOMIZE
+ENV F5DEMO_NODENAME "F5 Docker vLab"
+ENV F5DEMO_NODENAME_SSL "F5 Docker vLab"
+ENV F5DEMO_SHORT_NODENAME __HOSTNAME
+ENV F5DEMO_BACKEND_URL "http://127.0.0.1/backend.shtml"
+ENV F5DEMO_APP "index"
+
+RUN apk add --no-cache --update \
+          bash \
+          openssl \
+&&  rm /etc/nginx/conf.d/*
+RUN chown 1001 /var/cache/nginx /var/run /var/log/nginx /etc/nginx /etc/nginx/conf.d
+COPY conf.d/* /etc/nginx/conf.d/
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY html /usr/share/nginx/html/
+COPY nginx-entrypoint.sh /entrypoint.sh
+RUN sed -i.bak 's/listen\(.*\)80;/listen 8080;/' /etc/nginx/conf.d/f5demo.template
+RUN sed -i.bak 's/listen\(.*\)443/listen 8443/' /etc/nginx/conf.d/f5demo.template
+RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
+
+USER 1001
+EXPOSE 8080 8443
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["nginx", "-g", "daemon off;"]
