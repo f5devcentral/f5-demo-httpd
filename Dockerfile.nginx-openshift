@@ -12,7 +12,8 @@ RUN apk add --no-cache --update \
           bash \
           openssl \
 &&  rm /etc/nginx/conf.d/*
-RUN chown 1001 /var/cache/nginx /var/run /var/log/nginx /etc/nginx /etc/nginx/conf.d
+RUN chown 101:0 /var/cache/nginx /var/run /var/log/nginx /etc/nginx /etc/nginx/conf.d
+RUN chmod g+w /var/cache/nginx /var/run /var/log/nginx /etc/nginx /etc/nginx/conf.d
 COPY conf.d/* /etc/nginx/conf.d/
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY html /usr/share/nginx/html/
@@ -21,7 +22,7 @@ RUN sed -i.bak 's/listen\(.*\)80;/listen 8080;/' /etc/nginx/conf.d/f5demo.templa
 RUN sed -i.bak 's/listen\(.*\)443/listen 8443/' /etc/nginx/conf.d/f5demo.template
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 
-USER 1001
+USER 101
 EXPOSE 8080 8443
 
 ENTRYPOINT ["/entrypoint.sh"]
