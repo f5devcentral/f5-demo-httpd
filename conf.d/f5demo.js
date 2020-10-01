@@ -69,7 +69,10 @@ Client Protocol: ${upper_scheme}
     }
   }
 
-
+  if (r.variables.ssl_client_cert) {
+    output += "\n client cert:\n\n        ";
+    output += r.variables.ssl_client_cert + "\n";
+  }
     r.headersOut['Content-Type'] = 'text/plain';    
     r.return(200, output);
 }

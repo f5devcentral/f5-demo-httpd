@@ -25,6 +25,7 @@ server {
     ssl_certificate server.crt;
     ssl_certificate_key server.key;
     ssl_trusted_certificate chain.crt;
+    ssl_verify_client optional_no_ca;
 
     ssl_dhparam dhparam.pem;
 
