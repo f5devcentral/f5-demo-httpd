@@ -13,7 +13,7 @@ RUN apk add --no-cache --update \
           openssl \
 &&  rm /etc/nginx/conf.d/*
 RUN chown 101:0 /var/cache/nginx /var/run /var/log/nginx /etc/nginx /etc/nginx/conf.d
-RUN chmod g+w /var/cache/nginx /var/run /var/log/nginx /etc/nginx /etc/nginx/conf.d
+RUN chmod 777 /var/cache/nginx /var/run /var/log/nginx /etc/nginx /etc/nginx/conf.d
 COPY conf.d/* /etc/nginx/conf.d/
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY html /usr/share/nginx/html/
