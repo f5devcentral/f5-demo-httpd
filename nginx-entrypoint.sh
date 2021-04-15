@@ -58,9 +58,9 @@ then
     then
       export F5DEMO_SHORT_NODENAME=$HOSTNAME
     fi
-
+    export NAMESERVER=`cat /etc/resolv.conf | grep "nameserver" | awk '{print $2}' | tr '\n' ' '`
     # build nginx config from template
-    envsubst '$F5DEMO_NODENAME $F5DEMO_NODENAME_SSL $F5DEMO_COLOR $F5DEMO_COLOR_SSL $F5DEMO_BACKEND_URL $F5DEMO_APP' < /etc/nginx/conf.d/f5demo.template > /etc/nginx/conf.d/f5demo.conf
+    envsubst '$F5DEMO_NODENAME $F5DEMO_NODENAME_SSL $F5DEMO_COLOR $F5DEMO_COLOR_SSL $F5DEMO_BACKEND_URL $F5DEMO_APP $NAMESERVER' < /etc/nginx/conf.d/f5demo.template > /etc/nginx/conf.d/f5demo.conf
   fi
 
 

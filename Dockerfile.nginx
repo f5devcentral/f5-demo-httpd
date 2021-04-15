@@ -6,7 +6,9 @@ ENV F5DEMO_NODENAME "F5 Docker vLab"
 ENV F5DEMO_NODENAME_SSL "F5 Docker vLab"
 ENV F5DEMO_SHORT_NODENAME __HOSTNAME
 ENV F5DEMO_BACKEND_URL "http://127.0.0.1/backend.shtml"
+ENV F5DEMO_PONG_URL "http://127.0.0.1/pong"
 ENV F5DEMO_APP "index"
+ENV F5DEMO_BRAND "f5"
 
 RUN apk add --no-cache --update \
           bash \

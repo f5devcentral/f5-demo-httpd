@@ -16,8 +16,7 @@
     }
 
 
-js_include conf.d/f5demo.js;
-
+js_import conf.d/f5demo.js;
 
 server {
     listen 80;
@@ -32,13 +31,20 @@ server {
     include conf.d/mime.types;
 
 	location /headers.json {
-	    js_content headers_json;
+	    js_content f5demo.headers_json;
 	}
 	location /txt {
-	    js_content f5demo_txt;
+	    js_content f5demo.f5demo_txt;
 	}
+	location /ping {
+            js_content f5demo.ping;
+        }
+	location /pong {
+            js_content f5demo.pong;
+        }	
 
-
+    resolver $NAMESERVER ipv6=off;
+    
     ssi on;
     ssi_types text/plain image/svg+xml text/css;
     root /usr/share/nginx/html;
