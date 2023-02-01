@@ -98,7 +98,9 @@ server {
      try_files /${F5DEMO_APP}.shtml /txt;
    }
    location /backend/ {
-     proxy_pass ${F5DEMO_BACKEND_URL};
+     resolver ${NAMESERVER} valid=30s;
+     set $backend ${F5DEMO_BACKEND_URL};
+     proxy_pass $backend;
      proxy_http_version 1.1;
      proxy_set_header Connection "";
      proxy_set_header User-Agent "Frontend App/1.0";
