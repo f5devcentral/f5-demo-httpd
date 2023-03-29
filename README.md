@@ -25,6 +25,8 @@ docker run -p 8080:80 f5devcentral/f5-demo-httpd:nginx
 docker run --rm -e F5DEMO_APP=website f5devcentral/f5-demo-httpd:nginx
 # simple frontend
 docker run --rm -e F5DEMO_APP=frontend -e F5DEMO_BACKEND_URL=http://10.1.20.10/backend.shtml f5devcentral/f5-demo-httpd:nginx
+# simple frontend with backend url using proxy host header
+docker run --rm -e F5DEMO_APP=frontend -e F5DEMO_BACKEND_URL=http://10.10.10.10/backend.shtml -e F5DEMO_BACKEND_HOST=backend.corp f5devcentral/f5-demo-httpd:nginx
 # simple backend
 docker run --rm -e F5DEMO_APP=backend f5devcentral/f5-demo-httpd:nginx
 # different name/color for non-ssl/ssl
@@ -67,6 +69,7 @@ Other variables for "website"
 /index.shtml: simple site
 /frontend.shtml: simple frontend (for reverse-proxy demo)
 /backend.shtml: simple backend
+/backend/: proxy request to backend server
 /website.shtml: Simple website
 /headers/: Output of Client/Server HTTP headers
 /headers.json: Output of client headers in JSON
